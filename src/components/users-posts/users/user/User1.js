@@ -25,7 +25,7 @@ export default function User1({itemUser: {id, name, username, email, address: {s
             </p>
            <div className={'posts'}> {
                 userAndPosts.map((value, index) => <div className={'post'}>
-                    <h6>{value.id} - <spam>{value.title}</spam> --- {value.body}.</h6>
+                    <h6>{value.id} - <span>{value.title}</span> --- {value.body}.</h6>
                 </div>)
             }
            </div>
