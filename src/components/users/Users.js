@@ -2,7 +2,6 @@ import {getUsers, getUser, getPosts, getPost} from "../servises/Api";
 import {useEffect, useState} from "react";
 import User from "./user/User";
 
-
 export default function Users({items}){
 let [users, setUsers] = useState([]);
 
@@ -11,7 +10,6 @@ useEffect(()=>{
         setUsers([...value.data])
     })
     }, []);
-
 
 return (
         <div>
