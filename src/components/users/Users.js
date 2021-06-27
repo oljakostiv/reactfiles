@@ -1,4 +1,4 @@
-import {getUsers, getUser, getPosts, getPost} from "../servises/Api";
+import {getUsers} from "../servises/Api";
 import {useEffect, useState} from "react";
 import User from "./user/User";
 
@@ -14,7 +14,7 @@ useEffect(()=>{
 return (
         <div>
             {
-                users.map(u=><User key={u.id} item={u} />)
+                users.map(u=><h3 key={u.id}><User item={u}/></h3>)
             }
         </div>
     );

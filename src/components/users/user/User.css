@@ -1,0 +1,29 @@
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+
+.userProfile {
+    text-align: center;
+    background-color: #FFF9F9;
+    padding-top: 10px;
+    width: 700px;
+    margin-left: 315px;
+}
+.userName {
+    color: #61dafb;
+
+}
+.userEmail {
+    color: #5FA2BD;
+
+}
+.btnUser {
+    background-color: #BEE4FF;
+    color: #6495ed;
+    font-weight: bolder;
+    border-color: #61dafb;
+    margin: 15px;
+}

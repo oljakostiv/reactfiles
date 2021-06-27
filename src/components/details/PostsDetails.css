@@ -1,0 +1,16 @@
+.postsFiles {
+    background-color: aliceblue;
+    padding-top: 5px;
+
+}
+.postsFiles h5 {
+    font-style: italic;
+    color: lightpink;
+}
+.btnPosts {
+    background-color: #BEE4FF;
+    color: #6495ed;
+    font-weight: bolder;
+    border-color: #61dafb;
+    margin: 15px;
+}
