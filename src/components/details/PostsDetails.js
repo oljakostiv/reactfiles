@@ -12,13 +12,15 @@ export default function PostsDetails({item1}) {
             }
 
             <button className={'btnPosts'} onClick={() => {
-                getComments(item1.id).then(value => setCommentsDetails(value.data))
+                getComments(item1.id).then(value => setCommentsDetails([...value.data]))
             }}>click more!</button>
+
 
             {
                 commentsDetails && <CommentsDetails item2={commentsDetails}/>
             }
             <hr/>
         </div>
+
     );
 }
