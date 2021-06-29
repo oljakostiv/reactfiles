@@ -6,6 +6,7 @@ import './User.css';
 export default function User({item}) {
 
     let [postDetails, setPostDetails] = useState(null);
+    let [flag, setFlag] = (false);
 
     return (
         <div className={'userProfile'}>
@@ -14,11 +15,12 @@ export default function User({item}) {
             <button className={'btnUser'} onClick={() =>
                 {
                     getPosts(item.id).then(value => setPostDetails(value.data))
+                    setFlag(!flag);
                 }}>click!
             </button>
 
             {
-                postDetails && <PostsDetails item1={postDetails}/>
+                flag && <PostsDetails item1={postDetails}/>
             }
             <hr/>
         </div>
