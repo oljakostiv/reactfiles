@@ -1,13 +1,14 @@
+import "./Comment.css"
+
 export default function Comment({item3}) {
     return (
-        <div>
-            <div>
-                {item3.id} - E-mail: {item3.email}
+        <div className={"commentFile"}>
+            <div className={"commentEmail"}>
+                {item3.id} - e-mail: {item3.email}
             </div>
             <div>
                 Body: {item3.body}.
             </div>
-            <hr/>
         </div>
     );
 }

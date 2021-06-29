@@ -1,24 +1,28 @@
 import {getPostComments} from "../../servises/Api";
 import {useState} from "react";
 import PostComments from "./PostComments";
+import "./Post.css"
+
 
 export default function Post({item2}) {
     let [comments, setComments] = useState([]);
     let [flag, setFlag] = useState(false)
 
     return (
-        <div>
-            {item2.id} - Title: {item2.title}
-            <div>
-                Body: {item2.body}.
-            </div>
-            <button onClick={(id) => {
-                getPostComments(item2.id).then(value => setComments(value.data))
-                setFlag(!flag);
-            }}>Comments
-            </button>
+        <div className={"postWrap"}>
+            <div className={"postFile"}>
+                {item2.id} - Title: {item2.title}
+                <div className={"bodyPost"}>
+                    Body: {item2.body}.
+                </div>
+                <button className={"btnPost"} onClick={(id) => {
+                    getPostComments(item2.id).then(value => setComments(value.data))
+                    setFlag(!flag);
+                }}>Comments
+                </button>
 
-            {flag && <PostComments commentsOfPosts={comments}/>}
+                {flag && <PostComments key={comments.id} commentsOfPosts={comments}/>}
+            </div>
         </div>
     );
 }

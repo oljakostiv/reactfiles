@@ -13,10 +13,12 @@ export default function App() {
     return (
         <Router>
             <div className={'appStyle'}>
-                <div><Link to={'/'}>Home</Link></div>
-                <div><Link to={'/users'}>Users</Link></div>
-                <div><Link to={'/posts'}>Posts</Link></div>
-                <div><Link to={'/comments'}>Comments</Link></div>
+               <div className={'links'}>
+                   <div><Link to={'/'}>Home</Link></div>
+                   <div><Link to={'/users'}>Users</Link></div>
+                   <div><Link to={'/posts'}>Posts</Link></div>
+                   <div><Link to={'/comments'}>Comments</Link></div>
+               </div>
 
                 <Switch>
                     <Route exact path={'/'} render={() => {

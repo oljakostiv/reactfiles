@@ -1,0 +1,46 @@
+.postWrap {
+    display: flex;
+    justify-content: space-around;
+
+}
+.postFile {
+    width: 700px;
+    border: 2px dotted silver;
+    background-color: #AFAB57;
+    font-style: italic;
+
+
+    padding: 10px;
+    margin: 15px;
+}
+
+.bodyPost {
+    font-weight: normal;
+    color: azure;
+
+    margin: 10px;
+}
+
+.btnPost {
+    width: 100px;
+    height: 30px;
+    background-color: #C45F20;
+    border-color: #859759;
+    border-radius: 20%;
+    font-size: 15px;
+    color: azure;
+    font-weight: initial;
+
+    margin-top: 10px;
+}
+
+/*postComments:*/
+.postCommentsStyle{
+    color: azure;
+    font-style: italic;
+    font-size: 15px;
+}
+.namePostComments {
+    color: #fff;
+    font-style: initial;
+}

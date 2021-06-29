@@ -43,13 +43,25 @@
     text-align: center;
 }
 
-.appStyle div a {
+.links {
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid;
+    border-color: aliceblue;
+    padding: 20px 0;
+}
+
+.links div a {
     text-decoration: none;
     color: aliceblue;
     font-size: 20px;
+
 }
 
 .welcomeHome {
     height: 600px;
     font-size: 40px;
+
+    padding-top: 70px;
 }
+

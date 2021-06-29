@@ -11,7 +11,7 @@ export default function User({item}){
     let [flag, setFlag] = useState(false);
 
     return (
-        <div>
+        <div className={"userFile"}>
             <div className={'nameUser'}>
                 {item.id} - Name: {item.name}.
             </div>
@@ -25,7 +25,6 @@ export default function User({item}){
             }}>Posts</button>
 
             {flag &&<UserPosts itemUserPosts={userPosts}/>}
-            <hr/>
         </div>
     );
 }
