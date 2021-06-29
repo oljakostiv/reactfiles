@@ -12,7 +12,7 @@ import Comments from "./components/comments/Comments";
 export default function App() {
     return (
         <Router>
-            <div style={{background: "#859759", color: "#fff", textAlign:"center"}} className={'appStyle'}>
+            <div className={'appStyle'}>
                 <div><Link to={'/'}>Home</Link></div>
                 <div><Link to={'/users'}>Users</Link></div>
                 <div><Link to={'/posts'}>Posts</Link></div>
