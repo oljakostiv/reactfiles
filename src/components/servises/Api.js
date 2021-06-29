@@ -6,8 +6,8 @@ const getUsers = ()=>{
 const getPosts = (id)=>{
     return axiosInstance.get('users/' + id + '/posts')
 };
-const getComments = () =>{
-    return axiosInstance.get('users/posts/comments')
+const getComments = (id) =>{
+    return axiosInstance('posts/' + id + '/comments')
 };
 
 export {getUsers, getPosts, getComments};
