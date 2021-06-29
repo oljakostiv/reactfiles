@@ -19,7 +19,7 @@ export default function App() {
                 <div><Link to={'/comments'}>Comments</Link></div>
 
                 <Switch>
-                    <Route exact path={'/'} render={()=>{
+                    <Route exact path={'/'} render={() => {
                         return <div className={'welcomeHome'}><h3>Welcome!</h3></div>
                     }}/>
                     <Route exact path={'/users'} render={(props) => {

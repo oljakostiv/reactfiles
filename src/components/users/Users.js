@@ -5,15 +5,15 @@ import User from "./user/User";
 export default function Users() {
     let [users, setUsers] = useState([]);
 
-    useEffect(()=>{
-        getUsers().then(value =>{
+    useEffect(() => {
+        getUsers().then(value => {
             setUsers([...value.data])
         })
     }, []);
     return (
         <div>
             {
-                users.map(u=><h5 key={u.id}><User item={u}/></h5>)
+                users.map(value => <h5 key={value.id}><User item={value}/></h5>)
             }
         </div>
     );

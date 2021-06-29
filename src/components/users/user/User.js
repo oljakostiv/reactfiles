@@ -6,7 +6,7 @@ import UserPosts from "./UserPosts";
 
 export default function User({item}){
 
-    let [posts, setPosts] = useState([]);
+    let [userPosts, setUserPosts] = useState([]);
     let [flag, setFlag] = useState(false);
 
     return (
@@ -19,11 +19,11 @@ export default function User({item}){
             </div>
 
             <button onClick={(id) =>{
-            getUserPosts(item.id).then(value => setPosts(value.data))
+            getUserPosts(item.id).then(value => setUserPosts(value.data))
                 setFlag(!flag);
             }}>Posts</button>
 
-            {flag &&<UserPosts itemUserPosts={posts}/>}
+            {flag &&<UserPosts itemUserPosts={userPosts}/>}
             <hr/>
         </div>
     );

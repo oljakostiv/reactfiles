@@ -6,15 +6,15 @@ import Post from "./post/Post";
 export default function Posts() {
     let [posts, setPosts] = useState([]);
 
-    useEffect(()=>{
-        getPosts().then(value =>{
+    useEffect(() => {
+        getPosts().then(value => {
             setPosts([...value.data])
         })
     }, []);
     return (
         <div>
             {
-                posts.map(p=><h5 key={p.id}><Post item2={p}/></h5>)
+                posts.map(value => <h5 key={value.id}><Post item2={value}/></h5>)
             }
         </div>
     );

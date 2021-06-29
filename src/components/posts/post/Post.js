@@ -6,24 +6,19 @@ export default function Post({item2}) {
     let [comments, setComments] = useState([]);
     let [flag, setFlag] = useState(false)
 
-
     return (
         <div>
+            {item2.id} - Title: {item2.title}
             <div>
-                {item2.id} - Title: {item2.title}
-                <div>
-                    Body: {item2.body}.
-                </div>
-                <button onClick={(id) => {
-                getPostComments(item2.id).then(value => setComments(value.data))
-
-                setFlag(!flag);
-
-            }}>Comments</button>
+                Body: {item2.body}.
             </div>
+            <button onClick={(id) => {
+                getPostComments(item2.id).then(value => setComments(value.data))
+                setFlag(!flag);
+            }}>Comments
+            </button>
 
             {flag && <PostComments commentsOfPosts={comments}/>}
-
         </div>
     );
 }
