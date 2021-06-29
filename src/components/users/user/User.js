@@ -20,7 +20,7 @@ export default function User({item}) {
             </button>
 
             {
-                flag && postDetails && <PostsDetails item1={postDetails}/>
+                flag && postDetails && <PostsDetails userId={item.id} item1={postDetails}/>
             }
             <hr/>
         </div>
