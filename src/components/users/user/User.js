@@ -6,7 +6,7 @@ import './User.css';
 export default function User({item}) {
 
     let [postDetails, setPostDetails] = useState(null);
-    let [flag, setFlag] = (false);
+    let [flag, setFlag] = useState(false);
 
     return (
         <div className={'userProfile'}>
@@ -20,7 +20,7 @@ export default function User({item}) {
             </button>
 
             {
-                flag && <PostsDetails item1={postDetails}/>
+                flag && postDetails && <PostsDetails item1={postDetails}/>
             }
             <hr/>
         </div>
