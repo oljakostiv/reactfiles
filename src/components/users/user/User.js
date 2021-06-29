@@ -5,7 +5,7 @@ import './User.css';
 
 export default function User({item}) {
 
-    let [postDetails, setPostDetails] = useState(null);
+    let [postDetails, setPostDetails] = useState([]);
     let [flag, setFlag] = useState(false);
 
     return (
