@@ -20,9 +20,6 @@ export default function PostsDetails({item1, item1:{id}}) {
             }}>click more!</button>
 
                 <CommentsDetails item2={commentsDetails}/>
-
-            <hr/>
         </div>
-
     );
 }
