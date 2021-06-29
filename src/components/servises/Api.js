@@ -8,14 +8,12 @@ const getUsers = () => {
 const getPosts = () => {
     return axiosInstance.get('/posts/')
 };
+const getUserPosts = (id) => axiosInstance('/users/' + id + '/posts')
+
 const getComments = () => {
     return axiosInstance.get('/comments/')
 };
-const getPost = (id) => {
-    return axiosInstance.get('/posts/' + id)
-};
-const getComment = (id) => {
-    return axiosInstance.get('/comments/' + id)
-};
+const getPostComments = (id) => axiosInstance('/posts/' + id + '/comments')
 
-export {getUsers, getPosts, getComments, getPost, getComment};
+
+export {getUsers, getPosts, getComments, getUserPosts, getPostComments};

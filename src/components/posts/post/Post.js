@@ -1,29 +1,22 @@
+import {getPostComments} from "../../servises/Api";
 import {useState} from "react";
-import Comment from "../../comments/comment/Comment";
-import {getComments} from "../../servises/Api";
-import Comments from "../../comments/Comments";
+import PostComments from "./PostComments";
 
 export default function Post({item2}){
-
-    let [comments, setComments] = useState(null);
+    let [comments, setComments] = useState([]);
 
     return (
         <div>
             <div>
-                {item2.id} - Title: {item2.title}.
-            </div>
-            <div>
-                Body: {item2.body}.
-            </div>
-
-            <button onClick={(id) =>{
-                getComments(item2.id).then(value => setComments(value.data))
+                {item2.id} - Title: {item2.title} -    <button onClick={(id) =>{
+                getPostComments(item2.id).then(value => setComments(value.data))
             }}>Comments</button>
+            </div>
 
-            {
-                comments && <Comments item3={comments}/>
-            }
-            <hr/>
+            <PostComments commentsOfPosts={comments}/>
+            <div>
+                {/*Body: {item2.body}.*/}
+            </div>
         </div>
     );
 }

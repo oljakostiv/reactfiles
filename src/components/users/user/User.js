@@ -1,12 +1,12 @@
 import {useState} from "react";
-import {getPosts} from "../../servises/Api";
-import Posts from "../../posts/Posts";
+import {getUserPosts} from "../../servises/Api";
+import UserPosts from "./UserPosts";
 
 
 
 export default function User({item}){
 
-    let [posts, setPosts] = useState(null);
+    let [posts, setPosts] = useState([]);
 
     return (
         <div>
@@ -18,12 +18,10 @@ export default function User({item}){
             </div>
 
             <button onClick={(id) =>{
-            getPosts(item.id).then(value => setPosts(value.data))
+            getUserPosts(item.id).then(value => setPosts(value.data))
             }}>Posts</button>
 
-            {
-                posts && <Posts item2={posts}/>
-            }
+                 <UserPosts itemUserPosts={posts}/>
             <hr/>
         </div>
     );
