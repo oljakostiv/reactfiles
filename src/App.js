@@ -1,4 +1,8 @@
 import './App.css';
+import Users2 from "./comp2/users/Users2";
+import {useEffect, useState} from "react";
+import {getUsers2} from "./comp2/api2/Api2";
+
 import Users from "./comp/users/Users";
 import {
     BrowserRouter as Router,
@@ -33,3 +37,21 @@ export default function App() {
         </Router>
     );
 }
+
+
+// // comp2:
+// export default function App() {
+//     let [users2, setUsers2] = useState([]);
+//
+//     useEffect(()=> {
+//         getUsers2().then(value => {
+//             setUsers2(value.data.data)
+//         });
+//     }, []);
+//
+//     return (
+//         <div>
+//             <Users2 itemsUsers={users2}/>
+//         </div>
+//     );
+// }
