@@ -1,18 +1,9 @@
-import {useEffect, useState} from "react";
-import {getPost} from "../../api/Api";
-
-export default function PostDetails({match: {params: {id}}}) {
-
-    let [post, setPost] = useState({});
-    useEffect(() => {
-        getPost(id).then(value => {
-            setPost({...value.data});
-        });
-    }, [id]);
-    return (
-        <div>
-            <hr/>
-            {post.id}-{post.body}.
-        </div>
-    );
-}
+// export default function PostDetails({item2}) {
+//     return (
+//         <div>
+//             {
+//                 item2.map(value => {value.body})
+//             }
+//         </div>
+//     )
+// }

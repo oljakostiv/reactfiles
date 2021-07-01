@@ -1,10 +1,9 @@
 import {useEffect, useState} from "react";
 import {getPosts} from "../api/Api";
-import {Route, Switch} from "react-router-dom";
 import Post from "./post/Post";
-import PostDetails from "./post/PostDetails";
 
-export default function Posts({match:{url}}) {
+export default function Posts(props) {
+    let {match:{url}} = props;
     let [posts, setPosts] = useState([]);
     useEffect(() => {
         getPosts().then(value => {
@@ -13,13 +12,11 @@ export default function Posts({match:{url}}) {
     }, []);
     return (
         <div>
+            <hr/>
             {
                 posts.map(value => <Post key={value.id} item1={value} url={url}/> )
             }
-
-            <Switch>
-                <Route path={'/posts/:id'} component={PostDetails}/>
-            </Switch>
+            <hr/>
         </div>
     );
 }
