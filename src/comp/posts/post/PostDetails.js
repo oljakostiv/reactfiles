@@ -2,8 +2,8 @@ import {useEffect, useState} from "react";
 import {getPost} from "../../api/Api";
 
 
-export default function PostDetails(props) {
-console.log(props)
+export default function PostDetails({match: {params: {id}}}) {
+
     let [post, setPost] = useState({});
     useEffect(() => {
         getPost(id).then(value => {

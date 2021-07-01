@@ -10,7 +10,7 @@ const getUser = (id) => axiosInstance('/users/' + id);
 const getPosts = () => {
     return axiosInstance('/posts/')
 };
-const getPost = (id) => axiosInstance('/users/' + id);
+const getPost = (id) => axiosInstance('/posts/' + id);
 
 const getComments = () => {
     return axiosInstance('/comments/')
