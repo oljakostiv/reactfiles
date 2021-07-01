@@ -5,11 +5,12 @@ import {getPostOfUsers} from "../../api/Api";
 
 export default function User({item, url}) {
 
-    const [postOfUsers, setPostOfUsers] = useState([])
+    const [postOfUsers, setPostOfUsers] = useState([]);
+    let [flag, setFlag] = useState(false);
     function click (){
         getPostOfUsers(item.id).then(value=>setPostOfUsers(value.data))
+        setFlag(!flag);
     }
-
     return (
         <div>
             <div>
@@ -18,7 +19,7 @@ export default function User({item, url}) {
             </div>
 
             <Route path={url + '/' + item.id + '/posts/'} render={
-                (props) => <Posts postOfUsers={postOfUsers} {...props}/>
+                (props) => flag && <Posts postOfUsers={postOfUsers} {...props}/>
             }/>
         </div>
     );

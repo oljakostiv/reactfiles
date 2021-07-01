@@ -1,15 +1,7 @@
-import {useEffect, useState} from "react";
-import {getPosts} from "../api/Api";
 import Post from "./post/Post";
 
-export default function Posts(props) {
-    let {postOfUsers,match:{url}} = props;
-    // let [posts, setPosts] = useState([]);
-    // useEffect(() => {
-    //     getPosts().then(value => {
-    //         setPosts([...value.data]);
-    //     });
-    // }, []);
+export default function Posts({postOfUsers, match:{url}}) {
+
     return (
         <div>
             <hr/>
