@@ -1,9 +1,15 @@
 import './App.css';
 
-function App() {
-  return (
-    <div></div>
-  );
-}
+export default function App() {
+    return (
+        <Router>
+            <div>
+                <Link to={'/users'}>Users</Link>
+            </div>
 
-export default App;
+            <Svitch>
+                <Route path={'/users'} component={Users}/>
+            </Svitch>
+        </Router>
+    );
+}
