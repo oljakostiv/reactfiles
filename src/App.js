@@ -7,6 +7,7 @@ import {
     Link
 } from 'react-router-dom';
 import Posts from "./comp/posts/Posts";
+import Comments from "./comp/comments/Comments";
 
 export default function App() {
     return (
@@ -21,15 +22,24 @@ export default function App() {
                 <li>
                     <Link to={'/posts'}>Posts</Link>
                 </li>
+                <li>
+                    <Link to={'/comments'}>Comments</Link>
+                </li>
                 <hr/>
             </div>
 
             <Switch>
+                <Route exact path={'/'}>
+                    Welcome!
+                </Route>
                 <Route path={'/users'} render={
                     (props) => <Users {...props}/>
                 }/>
                 <Route path={'/posts'} render={
                     (props) => <Posts {...props}/>
+                }/>
+                <Route path={'/comments'} render={
+                    (props) => <Comments {...props}/>
                 }/>
             </Switch>
 
