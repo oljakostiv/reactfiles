@@ -12,7 +12,7 @@ import Comments from "./comp/comments/Comments";
 export default function App() {
     return (
         <Router>
-            <div>
+            <div className={'linksStyle'}>
                 <li>
                     <Link to={'/'}>Home</Link>
                 </li>
@@ -25,12 +25,11 @@ export default function App() {
                 <li>
                     <Link to={'/comments'}>Comments</Link>
                 </li>
-                <hr/>
             </div>
 
             <Switch>
                 <Route exact path={'/'}>
-                    Welcome!
+                    <div className={'homeStyle'}>Welcome!</div>
                 </Route>
                 <Route path={'/users'} render={
                     (props) => <Users {...props}/>
@@ -42,6 +41,10 @@ export default function App() {
                     (props) => <Comments {...props}/>
                 }/>
             </Switch>
+
+            <div className={'photo'}>
+                <img src="https://i.pinimg.com/originals/e6/a7/e8/e6a7e84d075ed453954d6d882beacf0f.jpg" alt="field"/>
+            </div>
 
         </Router>
     );

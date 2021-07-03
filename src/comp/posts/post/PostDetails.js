@@ -10,8 +10,7 @@ export default function PostDetails({match: {params: {id}}}) {
         });
     }, [id]);
     return (
-        <div>
-            <hr/>
+        <div className={'postDetailsStyle'}>
             {post.id}-{post.body}.
         </div>
     );

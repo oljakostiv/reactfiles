@@ -1,0 +1,37 @@
+.commentsStyle {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    padding-top: 20px;
+}
+
+.commentStyle {
+    width: 400px;
+    height: 20px;
+    font-size: 12px;
+    color: #25883E;
+    text-align: center;
+
+    margin: 10px 0;
+}
+
+.linkCommentStyle a {
+    text-decoration: none;
+    color: #FFD84A;
+    font-style: italic;
+}
+
+.commentDetailsStyle {
+    width: 600px;
+    color: #3D5C00;
+    font-size: 15px;
+    border-top: 1px solid #BDAB05;
+    text-align: center;
+    font-style: italic;
+
+    margin: 20px;
+    padding: 5px;
+}

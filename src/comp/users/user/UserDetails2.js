@@ -1,4 +1,6 @@
 import {useEffect, useState} from "react";
+import './User.css'
+
 
 export default function UserDetails2({location:{state}}) {
     let [user, setUser] = useState({});
@@ -6,8 +8,7 @@ export default function UserDetails2({location:{state}}) {
         setUser({...state});
     }, [state]);
     return (
-      <div>
-          <hr/>
+      <div className={'userDetailsStyle'}>
           {user.id} - {user.username} - {user.email}.
       </div>
     );

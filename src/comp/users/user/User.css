@@ -1,0 +1,23 @@
+.userStyle {
+    color: #25883E;
+    font-size: 20px;
+
+    margin-top: 10px;
+}
+
+.userStyle a {
+    text-decoration: none;
+    color: #FFD84A;
+    font-style: italic;
+}
+
+.userDetailsStyle {
+    width: 600px;
+    color: #3D5C00;
+    font-size: 17px;
+    border-left: 1px solid #BDAB05;
+
+    margin: 20px;
+    padding: 5px;
+}
+

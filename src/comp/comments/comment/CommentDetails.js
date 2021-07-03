@@ -10,8 +10,7 @@ export default function CommentDetails({match: {params: {id}}}) {
         });
     }, [id]);
     return (
-        <div>
-            <hr/>
+        <div className={'commentDetailsStyle'}>
             {comment.id} - {comment.body}.
         </div>
     );

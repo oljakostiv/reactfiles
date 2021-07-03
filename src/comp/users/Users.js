@@ -4,6 +4,7 @@ import User from "./user/User";
 import {Route, Switch} from "react-router-dom";
 import UserDetails from "./user/UserDetails";
 import UserDetails2 from "./user/UserDetails2";
+import './Users.css'
 
 export default function Users(props) {
     let {match:{url}} = props;
@@ -14,7 +15,7 @@ export default function Users(props) {
         });
     }, []);
     return (
-        <div>
+        <div className={'usersStyle'}>
             {
                 users.map(value => <User key={value.id} item={value} url={url}/> )
             }

@@ -3,6 +3,7 @@ import {getPosts} from "../api/Api";
 import {Route, Switch} from "react-router-dom";
 import Post from "./post/Post";
 import PostDetails from "./post/PostDetails";
+import './post/Post.css'
 
 export default function Posts({match:{url}}) {
     let [posts, setPosts] = useState([]);
@@ -12,7 +13,7 @@ export default function Posts({match:{url}}) {
         });
     }, []);
     return (
-        <div>
+        <div className={'postsStyle'}>
             {
                 posts.map(value => <Post key={value.id} item1={value} url={url}/> )
             }
