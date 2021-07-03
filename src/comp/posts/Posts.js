@@ -1,14 +1,13 @@
 import Post from "./post/Post";
+import './post/Post.css'
 
 export default function Posts({postOfUsers, match:{url}}) {
 
     return (
-        <div>
-            <hr/>
+        <div className={'postsStyle'}>
             {
                 postOfUsers.map(value => <Post key={value.id} item1={value} url={url} /> )
             }
-            <hr/>
         </div>
     );
 }

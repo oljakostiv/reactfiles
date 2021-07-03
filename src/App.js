@@ -14,25 +14,27 @@ import {
 export default function App() {
     return (
         <Router>
-            <div>
+            <div className={'linksStyle'}>
                 <li>
                     <Link to={'/'}>Home</Link>
                 </li>
                 <li>
-                    <Link to={'/users'}>Users</Link>
+                    <Link to={'/users'}>Users:</Link>
                 </li>
-
-                <hr/>
             </div>
 
             <Switch>
                 <Route exact path={'/'}>
-                    Welcome!
+                    <div className={'homePage'}>Welcome!</div>
                 </Route>
                 <Route path={'/users'} render={
                     (props) => <Users {...props}/>
                 }/>
             </Switch>
+            
+            <div className={'photo'}>
+                <img src="https://t4.ftcdn.net/jpg/03/13/39/33/240_F_313393320_otAIMTH0SMcR3taJNugjjR58NSJd5Fok.jpg" alt=""/>
+            </div>
 
         </Router>
     );

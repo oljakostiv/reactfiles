@@ -1,0 +1,13 @@
+.userStyle {
+    margin-top: 10px;
+}
+
+.btnPosts {
+    width: 80px;
+    height: 25px;
+    background-color: #FBFBFC;
+    border-style: none;
+    color: #E6E6E7;
+    font-size: 18px;
+    font-style: initial;
+}

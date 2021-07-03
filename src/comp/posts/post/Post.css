@@ -1,0 +1,16 @@
+.postsStyle {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.postStyle {
+    width: 600px;
+    height: 100%;
+    text-align: center;
+    font-style: initial;
+    color: #555555;
+
+    margin-top: 10px;
+}
