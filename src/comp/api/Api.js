@@ -19,3 +19,4 @@ const getComment = (id) => axiosInstance('/comments/' + id);
 
 
 export {getUsers,getUser, getPosts, getPost, getComments, getComment};
+// bottom
