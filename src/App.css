@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+
+.btnStyle {
+  height: 50px;
+  background-color: #61dafb;
+  border-bottom: #ffffff solid 1px;
+}
+
+.btnInc, .btnDec, .btnReset {
+  width: 88px;
+  height: 30px;
+  background-color: #282c34;
+  color: #fff;
+  font-size: 18px;
+  border-color: #ffffff;
+  border-radius: 33%;
+
+  margin: 10px 20px;
+}
+
+.counterStyle {
+  width: 150px;
+  height: 150px;
+  border: #61dafb inset 3px;
+  background-color: #415E74;
+  border-radius: 50%;
+ }
+
+.counterStyle h1 {
+  font-size: 55px;
+}
