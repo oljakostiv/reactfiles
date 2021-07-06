@@ -1,8 +1,10 @@
 import './App.css';
 import {useSelector, useDispatch} from "react-redux";
+import {useEffect} from "react";
 
 const SomeNestedChildComponent = () => {
     const counter = useSelector((state) => state.counterValue);
+    const users = useSelector((state) => state.users)
     console.log(counter);
 
 
@@ -10,6 +12,14 @@ const SomeNestedChildComponent = () => {
         <header className={'App-header'}>
             <div className={'counterStyle'}>
                 <h1>{counter}</h1>
+            </div>
+            <div>
+                <h5>USERS:</h5>
+                {users.map(users => (
+                    <div key={users.id}>
+                        {users.id} - {users.name} - {users.email}
+                    </div>
+                ))}
             </div>
 
         </header>
@@ -26,15 +36,28 @@ function App() {
 
     const dispatch = useDispatch();
 
+    const fetchUsers = async () => {
+        const data = await (await fetch('https://jsonplaceholder.typicode.com/users')).json()
+
+        console.log(data)
+        dispatch({
+            type:'SET_USERS',
+            payload: data,
+        })
+    }
+
+    useEffect(() => {
+       fetchUsers()
+    }, [])
+
     return (
         <div className={'App'}>
             <div className={'btnStyle'}>
 
-                    {/*<input type={'number'} value={num} onChange={onNumChange}/>*/}
-                    <button className={'btnInc'} onClick={() => {
-                        dispatch({type: 'INC_CUSTOM', payload: 88})
-                    }}>INC
-                    </button>
+                <button className={'btnInc'} onClick={() => {
+                    dispatch({type: 'INC_CUSTOM', payload: 88})
+                }}>INC
+                </button>
 
                 <button className={'btnDec'} onClick={() => {
                     dispatch({type: 'DEC'})

@@ -8,7 +8,8 @@ import {createStore} from "redux";
 import {Provider} from "react-redux";
 
 const initialState = {
-    counterValue: 0
+    counterValue: 0,
+    users: []
 }
 
 const counterReducer = (state = initialState, action) => {
@@ -21,6 +22,9 @@ const counterReducer = (state = initialState, action) => {
         }
         case 'RESET': {
             return {...state, counterValue: 0};
+        }
+        case 'SET_USERS': {
+            return {...state, users: action.payload};
         }
         default:
             return state;
