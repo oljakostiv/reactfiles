@@ -43,7 +43,7 @@
   border-bottom: #ffffff solid 1px;
 }
 
-.btnInc, .btnDec, .btnReset {
+.btnInc, .btnDec, .btnReset, .btnUsers {
   width: 88px;
   height: 30px;
   background-color: #282c34;
