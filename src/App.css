@@ -38,7 +38,7 @@
 }
 
 .btnStyle {
-  height: 50px;
+  height: 90px;
   background-color: #61dafb;
   border-bottom: #ffffff solid 1px;
 }
@@ -65,4 +65,23 @@
 
 .counterStyle h1 {
   font-size: 55px;
+}
+
+.inputStyle {
+  width: 150px;
+  height: 22px;
+  background-color: #fff;
+  color: #282c34;
+  text-align: center;
+  font-size: 18px;
+  border-color: #fff;
+}
+
+.btnInput {
+  width: 88px;
+  height: 30px;
+  background-color: #282c34;
+  color: #fff;
+  font-size: 18px;
+  border-color: #ffffff;
 }

@@ -1,5 +1,6 @@
 import './App.css';
 import {useSelector, useDispatch} from "react-redux";
+import {useState} from "react";
 
 const SomeNestedChildComponent = () => {
     const counter = useSelector((state) => state.counterValue);
@@ -26,15 +27,24 @@ function App() {
 
     const dispatch = useDispatch();
 
+    const [num, setNum] = useState('');
+    const onNumChange = ({target: {value}}) => {
+        setNum(value)
+    }
+
+    const onAdd = () => {
+        dispatch({type: 'INPUT', payload: +num})
+    }
+
     return (
         <div className={'App'}>
             <div className={'btnStyle'}>
 
-                    {/*<input type={'number'} value={num} onChange={onNumChange}/>*/}
-                    <button className={'btnInc'} onClick={() => {
-                        dispatch({type: 'INC_CUSTOM', payload: 88})
-                    }}>INC
-                    </button>
+
+                <button className={'btnInc'} onClick={() => {
+                    dispatch({type: 'INC_CUSTOM', payload: 88})
+                }}>INC
+                </button>
 
                 <button className={'btnDec'} onClick={() => {
                     dispatch({type: 'DEC'})
@@ -44,6 +54,11 @@ function App() {
                     dispatch({type: 'RESET'})
                 }}>RESET
                 </button>
+
+                <div>
+                    <input className={'inputStyle'} type={'number'} value={num} onChange={onNumChange}/>
+                    <button className={'btnInput'} onClick={onAdd}>input</button>
+                </div>
             </div>
             <SomeChildComponent/>
         </div>

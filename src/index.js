@@ -22,6 +22,9 @@ const counterReducer = (state = initialState, action) => {
         case 'RESET': {
             return {...state, counterValue: 0};
         }
+        case 'INPUT': {
+            return {...state, counterValue: state.counterValue + action.payload};
+        }
         default:
             return state;
     }
