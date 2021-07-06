@@ -1,0 +1,31 @@
+.routerStyle {
+    width: 100%;
+    height: 50px;
+    border-bottom: #415E74 dashed 4px;
+    background-color: #6BD7FB;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+}
+
+.routerStyle a{
+    text-decoration: none;
+    color: #415E74;
+    font-size: 20px;
+}
+.homeWelcomeStyle {
+    display: flex;
+    justify-content: center;
+}
+
+.welcome {
+    width: 500px;
+    font-size: 100px;
+    color: #6BD7FB;
+    text-align: center;
+    border-top: #fff solid 1px;
+    line-height: 0.85;
+
+    margin-top: 150px;
+}

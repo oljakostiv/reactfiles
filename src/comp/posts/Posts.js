@@ -1,5 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
+import './Posts.css'
 
 export default function Posts (){
     const posts = useSelector ((state) => state.posts)
@@ -18,14 +19,17 @@ export default function Posts (){
     }, [])
 
     return (
-        <div>
-            {
-                posts.map(posts => (
-                    <div key={posts.id}>
-                        {posts.id} - {posts.title}
-                    </div>
-                ))
-            }
+        <div className={'postsStyle'}>
+            Posts:
+            <div className={'postsFlex'}>
+                {
+                    posts.map(posts => (
+                        <div className={'postStyle'} key={posts.id}>
+                            <span>{posts.id}:</span> {posts.title}.
+                        </div>
+                    ))
+                }
+            </div>
         </div>
     );
 }

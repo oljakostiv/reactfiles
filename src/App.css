@@ -1,68 +1,52 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-.btnStyle {
-  height: 50px;
-  background-color: #61dafb;
-  border-bottom: #ffffff solid 1px;
+
+.appMainStyle {
+    width: 100%;
+    min-height: 600px;
+    background-color: #415E74;
 }
 
-.btnInc, .btnDec, .btnReset, .btnUsers {
-  width: 88px;
-  height: 30px;
-  background-color: #282c34;
-  color: #fff;
-  font-size: 18px;
-  border-color: #ffffff;
-  border-radius: 33%;
-
-  margin: 10px 20px;
-}
-
-.counterStyle {
-  width: 150px;
-  height: 150px;
-  border: #61dafb inset 3px;
-  background-color: #415E74;
-  border-radius: 50%;
- }
-
-.counterStyle h1 {
-  font-size: 55px;
+.imgStyle img {
+    width: 100%;
+    height: 130px;
+    border-top: #415E74 dashed 4px;
+    background-color: #6BD7FB;
 }

@@ -1,0 +1,31 @@
+.postsStyle{
+    color: #fff;
+    font-size: 25px;
+    font-style: italic;
+    text-align: center;
+
+    margin-top: 30px;
+}
+
+.postsFlex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    padding: 30px 0;
+}
+
+.postStyle {
+    width: 400px;
+    height: 50px;
+    color: #6BD7FB;
+    font-size: 17px;
+    font-style: normal;
+
+    margin-bottom: 8px;
+}
+
+.postStyle span {
+    color: #ffffff;
+    font-style: italic;
+}

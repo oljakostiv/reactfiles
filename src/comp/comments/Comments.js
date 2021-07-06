@@ -1,5 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
+import './Comments.css'
 
 export default function Comments (){
     const comments = useSelector((state) => state.comments)
@@ -18,14 +19,17 @@ export default function Comments (){
     }, [])
 
     return (
-        <div>
-            {
-                comments.map(comments => (
-                    <div key={comments.id}>
-                        {comments.id} - {comments.name}
-                    </div>
-                ))
-            }
+        <div className={'commentsStyle'}>
+            Comments:
+            <div className={'commentsFlex'}>
+                {
+                    comments.map(comments => (
+                        <div className={'commentStyle'} key={comments.id}>
+                            <span>{comments.id}:</span> {comments.name}.
+                        </div>
+                    ))
+                }
+            </div>
         </div>
     )
 

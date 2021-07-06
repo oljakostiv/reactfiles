@@ -1,5 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
+import './Users.css'
 
 export default function Users (){
     const users = useSelector((state) => state.users)
@@ -18,11 +19,12 @@ export default function Users (){
     }, [])
 
     return (
-        <div>
+        <div className={'usersStyle'}>
+            Users:
             {
                 users.map(users => (
-                <div key={users.id}>
-                    {users.id} - {users.name} - {users.email}
+                <div className={'userStyle'} key={users.id}>
+                    <span>{users.id}:</span> {users.name} (e-mail: {users.email});
                 </div>
             ))
             }

@@ -1,0 +1,21 @@
+.usersStyle{
+    color: #fff;
+    font-size: 25px;
+    font-style: italic;
+    text-align: center;
+
+    margin-top: 30px;
+}
+
+.userStyle {
+    color: #6BD7FB;
+    font-size: 20px;
+    font-style: normal;
+
+    margin-top: 12px;
+}
+
+.userStyle span {
+    color: #ffffff;
+    font-style: italic;
+}
