@@ -47,15 +47,17 @@ export default function TodosSelector (){
         dispatch(pushTodo(data))
     }
 
-    const onBtnComplete = async (id, toggle) => {
+    const onBtnComplete = async () => {
 
-        try {
-            const resp = await fetch('http://localhost:8888/update-todo/' + id);
-            // const data = await resp.json();
-            dispatch(setPatchTodo(id, toggle))
-        } catch (e){
-            console.log(e);
-        }
+        const resp = await fetch('http://localhost:8888/update-todo/:id', {
+            method: 'PATCH',
+            body: JSON.stringify({completed: true}),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        const data = await resp.json();
+        dispatch(setPatchTodo(data))
     }
 
     return (

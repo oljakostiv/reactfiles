@@ -11,4 +11,4 @@ export const setLoadingTrue = () => ({type: LOADING_TRUE});
 export const setLoadingFalse = () => ({type: LOADING_FALSE});
 export const pushTodo = (payload) => ({type: PUSH_TODO, payload});
 
-export const setPatchTodo = (id, toggle) => ({type: PATCH_TODO, id, toggle});
+export const setPatchTodo = (payload) => ({type: PATCH_TODO, payload});

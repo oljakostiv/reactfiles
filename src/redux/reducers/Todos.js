@@ -12,8 +12,6 @@ const initialState = {
 }
 
 export const todosReducer = (state = initialState, action) => {
-    console.log(action);
-    console.log(state);
     switch (action.type) {
         case ADD_TODOS: {
             return {...state, todosValue: action.payload}
@@ -28,10 +26,7 @@ export const todosReducer = (state = initialState, action) => {
             return {...state, todosValue: [...state.todosValue, action.payload]}
         }
         case PATCH_TODO: {
-            let find = state.todosValue.find(value => value.id === action.id);
-            find.completed = action.toggle
-            console.log(find);
-            return {...state}
+            return {...state, todosValue: [...state.todosValue, action.payload]}
         }
         default:
             return state
