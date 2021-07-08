@@ -1,12 +1,20 @@
 import {useDispatch, useSelector} from "react-redux";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import CreateTodosForm from "./TodosForm";
 import Todos from "./TodosValue";
-import {setLoadingFalse, setLoadingTrue, addTodos, pushTodo} from "../actionCreators/ActionCreators";
+import {
+    setLoadingFalse,
+    setLoadingTrue,
+    addTodos,
+    pushTodo,
+    setPatchTodo
+} from "../actionCreators/ActionCreators";
 
 export default function TodosSelector (){
     const {todosValue, todosLoading} = useSelector(store => store.todosReducer);
     const dispatch = useDispatch();
+
+    const [toggle, setToggle] = useState(false);
 
     const fetchTodos = async () => {
         try {
@@ -40,10 +48,30 @@ export default function TodosSelector (){
         // fetchTodos();
         dispatch(pushTodo(data))
     }
+
+    const onBtnComplete = async (id, toggle) => {
+        // console.log(toggle);
+        try {
+            // dispatch(setPatchFalse())
+            const resp = await fetch('http://localhost:8888/update-todo/' + id);
+            // const data = await resp.json();
+            dispatch(setPatchTodo(id, toggle))
+
+        } catch (e){
+            console.log(e);
+        } finally {
+            // dispatch(setPatchTrue())
+        }
+    }
+
+    // const onToggle = async (id) => {
+    //
+    // }
+
     return (
         <div>
             <CreateTodosForm onSubmit={onTodoCreate}/>
-            <Todos todosValue={todosValue} isLoading={todosLoading}/>
+            <Todos todosValue={todosValue} isLoading={todosLoading} btnComplete={onBtnComplete} />
         </div>
     )
 }
