@@ -3,8 +3,7 @@ import {
     LOADING_TRUE,
     LOADING_FALSE,
     PUSH_TODO,
-    PATCH_TRUE,
-    PATCH_FALSE, PATCH_TODO,
+    PATCH_TODO,
 } from '../actionTypes/ActionTypes'
 
 const initialState = {
