@@ -41,9 +41,9 @@ const Todos = ({todosValue}) => {
             {
                 todosValue.map(todo => (
                     <React.Fragment key={todo.id}>
-                        <div><h5>{todo.title} - {todo.description}
+                        <div><h6>{todo.title} - {todo.description}
                             <br/>
-                            Created Ad: {new Date(todo.createdAt).toDateString()}</h5>
+                            Created Ad: {new Date(todo.createdAt).toDateString()}</h6>
                         </div>
                         <hr/>
                     </React.Fragment>
