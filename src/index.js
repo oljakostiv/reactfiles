@@ -4,33 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import {createStore} from "redux";
+import {store} from "./redux/Store";
 import {Provider} from "react-redux";
-
-const initialState = {
-    counterValue: 0
-}
-
-const counterReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'INC_CUSTOM': {
-            return {...state, counterValue: state.counterValue + action.payload};
-        }
-        case 'DEC': {
-            return {...state, counterValue: state.counterValue - 1};
-        }
-        case 'RESET': {
-            return {...state, counterValue: 0};
-        }
-        case 'INPUT': {
-            return {...state, counterValue: state.counterValue + action.payload};
-        }
-        default:
-            return state;
-    }
-}
-
-const store = createStore(counterReducer);
 
 ReactDOM.render(
     <React.StrictMode>

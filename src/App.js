@@ -1,66 +1,94 @@
 import './App.css';
-import {useSelector, useDispatch} from "react-redux";
-import {useState} from "react";
+import React from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect, useState} from "react";
 
-const SomeNestedChildComponent = () => {
-    const counter = useSelector((state) => state.counterValue);
-    console.log(counter);
+const CreateTodosForm = ({onSubmit}) => {
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (!title || !description) return;
+        try {
+            await onSubmit(title, description);
+            setTitle('');
+            setDescription('')
+        } catch (e) {
+            console.log(e)
+        }
+    }
 
     return (
-        <header className={'App-header'}>
-            <div className={'counterStyle'}>
-                <h1>{counter}</h1>
-            </div>
-
-        </header>
-    );
+        <div>
+            <form onSubmit={handleSubmit}>
+                <input type='text' value={title} onChange={({target: {value}}) => setTitle(value)}
+                       placeholder={'todo title'}/>
+                <br/>
+                <input type='text' value={description} onChange={({target: {value}}) => setDescription(value)}
+                       placeholder={'todo description'}/>
+                <br/>
+                <button type='submit' disabled={!title || !description}>click</button>
+            </form>
+        </div>
+    )
 }
 
-const SomeChildComponent = () => {
+const Todos = ({todosValue}) => {
     return (
-        <SomeNestedChildComponent/>
-    );
+        <div>
+            {
+                todosValue.map(todo => (
+                    <React.Fragment key={todo.id}>
+                        <div><h5>{todo.title} - {todo.description}
+                            <br/>
+                            Created Ad: {new Date(todo.createdAt).toDateString()}</h5>
+                        </div>
+                        <hr/>
+                    </React.Fragment>
+                ))
+            }
+        </div>
+    )
 }
 
 function App() {
-
+    const {todosValue} = useSelector(store => store.todosReducer);
     const dispatch = useDispatch();
 
-    const [num, setNum] = useState('');
-    const onNumChange = ({target: {value}}) => {
-        setNum(value)
+    const fetchTodos = async () => {
+        const resp = await fetch('http://localhost:8888/get-todos');
+        const data = await resp.json();
+
+        dispatch({type: 'ADD_TODOS', payload: data})
     }
 
-    const onAdd = () => {
-        dispatch({type: 'INPUT', payload: +num})
+    useEffect(() => {
+        fetchTodos();
+    }, [])
+
+    const onTodoCreate = async (title, description) => {
+        if (!title || !description) return;
+
+        const resp = await fetch('http://localhost:8888/create-todo', {
+            method: 'POST',
+            body: JSON.stringify({title, description}),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        const data = await resp.json();
+        console.log(data, 'todo')
     }
 
     return (
         <div className={'App'}>
-            <div className={'btnStyle'}>
-
-
-                <button className={'btnInc'} onClick={() => {
-                    dispatch({type: 'INC_CUSTOM', payload: 88})
-                }}>INC
-                </button>
-
-                <button className={'btnDec'} onClick={() => {
-                    dispatch({type: 'DEC'})
-                }}>DEC
-                </button>
-                <button className={'btnReset'} onClick={() => {
-                    dispatch({type: 'RESET'})
-                }}>RESET
-                </button>
-
-                <div>
-                    <input className={'inputStyle'} type={'number'} value={num} onChange={onNumChange}/>
-                    <button className={'btnInput'} onClick={onAdd}>input</button>
-                </div>
-            </div>
-            <SomeChildComponent/>
+            <header className={'App-header'}>
+                Hello!
+                <CreateTodosForm onSubmit={onTodoCreate}/>
+                <Todos todosValue={todosValue}/>
+            </header>
         </div>
     );
 }
