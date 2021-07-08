@@ -1,11 +1,28 @@
+import {
+    ADD_TODOS,
+    LOADING_TRUE,
+    LOADING_FALSE,
+    PUSH_TODO
+} from '../actionTypes/ActionTypes'
+
 const initialState = {
-    todosValue: []
+    todosValue: [],
+    todosLoading: false
 }
 
 export const todosReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'ADD_TODOS':{
+        case ADD_TODOS: {
             return {...state, todosValue: action.payload}
+        }
+        case LOADING_TRUE: {
+            return {...state, todosLoading: true}
+        }
+        case LOADING_FALSE: {
+            return {...state, todosLoading: false}
+        }
+        case PUSH_TODO: {
+            return {...state, todosValue: [...state.todosValue, action.payload]}
         }
         default:
             return state
