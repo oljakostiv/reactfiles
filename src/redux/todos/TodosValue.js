@@ -1,4 +1,4 @@
-import {Fragment} from "react";
+import React from "react";
 
 export default function Todos({todosValue, isLoading, btnComplete}) {
 
@@ -6,9 +6,8 @@ export default function Todos({todosValue, isLoading, btnComplete}) {
 
     return (
         <div>
-
             {todosValue.map(todo =>
-                <Fragment key={todo.id}>
+                <React.Fragment key={todo.id}>
                     <div>{todo.title} - {todo.description}
                         <br/>
                         <i>Created Ad: {new Date(todo.createdAt).toDateString()}</i>
@@ -20,7 +19,7 @@ export default function Todos({todosValue, isLoading, btnComplete}) {
                         <button className={'myBtn'}>Delete</button>
                     </div>
                     <hr/>
-                </Fragment>
+                </React.Fragment>
             )
 
             }
