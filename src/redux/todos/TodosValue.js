@@ -26,3 +26,5 @@ export default function Todos({todosValue, isLoading, btnComplete}) {
         </div>
     )
 }
+
+//6.1

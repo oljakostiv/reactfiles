@@ -67,3 +67,5 @@ export default function TodosSelector (){
         </div>
     )
 }
+
+//6.1

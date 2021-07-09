@@ -6,3 +6,5 @@ export const rootReducer = combineReducers({
     counterReducer,
     todosReducer
 })
+
+//6.1
