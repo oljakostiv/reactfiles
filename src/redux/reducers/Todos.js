@@ -26,7 +26,7 @@ export const todosReducer = (state = initialState, action) => {
             return {...state, todosValue: [...state.todosValue, action.payload]}
         }
         case PATCH_TODO: {
-            return {...state, todosValue: state.todosValue.map(el => el.id === payload.id ? payload : el)}
+            return {...state, todosValue: state.todosValue.map(el => el.id === action.payload.id ? action.payload : el)}
         }
         default:
             return state
