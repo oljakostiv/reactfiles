@@ -16,7 +16,7 @@ export default function Todos({todosValue, isLoading, btnComplete}) {
                         Status: {todo.completed.toString()}
                     </div>
                     <div>
-                        <button className={'myBtn'} onClick={btnComplete}>Complete</button>
+                        <button className={'myBtn'} onClick={() => btnComplete(todo.id)}>Complete</button>
                         <button className={'myBtn'}>Delete</button>
                     </div>
                     <hr/>

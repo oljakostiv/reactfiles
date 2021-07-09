@@ -51,7 +51,7 @@ export default function TodosSelector (){
 
         const resp = await fetch('http://localhost:8888/update-todo/' + id, {
             method: 'PATCH',
-            body: JSON.stringify({completed: false}),
+            body: JSON.stringify({completed: true}),
             headers: {
                 'Content-Type': 'application/json'
             }
