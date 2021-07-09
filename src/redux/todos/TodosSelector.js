@@ -47,9 +47,9 @@ export default function TodosSelector (){
         dispatch(pushTodo(data))
     }
 
-    const onBtnComplete = async () => {
+    const onBtnComplete = async (id) => {
 
-        const resp = await fetch('http://localhost:8888/update-todo/:id', {
+        const resp = await fetch('http://localhost:8888/update-todo/' + id, {
             method: 'PATCH',
             body: JSON.stringify({completed: true}),
             headers: {
