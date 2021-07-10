@@ -9,7 +9,7 @@ export default function Todos({todosValue, isLoading, btnComplete, deleteTodo}) 
 
             {todosValue.map(todo =>
                 <React.Fragment key={todo.id}>
-                    <div>{todo.title} - {todo.description}
+                    <div style={{textDecoration: todo.completed ? 'line-through' : 'none',}}>{todo.title} - {todo.description}
                         <br/>
                         <i>Created Ad: {new Date(todo.createdAt).toDateString()}</i>
                         <br/>
@@ -17,7 +17,7 @@ export default function Todos({todosValue, isLoading, btnComplete, deleteTodo}) 
                     </div>
                     <div>
                         <button className={'myBtn'} onClick={() => btnComplete(todo.id)}>Complete</button>
-                        <button className={'myBtn'} onClick={() => deleteTodo(todo.id)}>Delete</button>
+                        <button className={'myBtn'}  onClick={() => deleteTodo(todo.id)}>Delete</button>
                     </div>
                     <hr/>
                 </React.Fragment>
@@ -26,6 +26,8 @@ export default function Todos({todosValue, isLoading, btnComplete, deleteTodo}) 
             }
         </div>
     )
+
+
 }
 
 //6.1
