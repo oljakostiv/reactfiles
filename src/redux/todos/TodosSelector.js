@@ -7,7 +7,8 @@ import {
     setLoadingTrue,
     addTodos,
     pushTodo,
-    setPatchTodo
+    setPatchTodo,
+    setDeleteTodo
 } from "../actionCreators/ActionCreators";
 
 export default function TodosSelector (){
@@ -51,7 +52,7 @@ export default function TodosSelector (){
 
         const resp = await fetch('http://localhost:8888/update-todo/' + id, {
             method: 'PATCH',
-            body: JSON.stringify( {completed: false}),
+            body: JSON.stringify( {completed:  true}),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -60,10 +61,20 @@ export default function TodosSelector (){
         dispatch(setPatchTodo(data))
     }
 
+    const onDeleteTodo = async (id) => {
+
+        const resp = await fetch('http://localhost:8888/delete-todo/' + id, {
+            method: 'DELETE',
+
+        })
+        await resp.json();
+        dispatch(setDeleteTodo(id))
+    }
+
     return (
         <div>
             <CreateTodosForm onSubmit={onTodoCreate}/>
-            <Todos todosValue={todosValue} isLoading={todosLoading} btnComplete={onBtnComplete} />
+            <Todos todosValue={todosValue} isLoading={todosLoading} btnComplete={onBtnComplete} deleteTodo={onDeleteTodo}/>
         </div>
     )
 }

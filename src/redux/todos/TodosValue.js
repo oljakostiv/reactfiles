@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Todos({todosValue, isLoading, btnComplete}) {
+export default function Todos({todosValue, isLoading, btnComplete, deleteTodo}) {
 
     if (isLoading) return <h1>Loading...</h1>
 
@@ -17,7 +17,7 @@ export default function Todos({todosValue, isLoading, btnComplete}) {
                     </div>
                     <div>
                         <button className={'myBtn'} onClick={() => btnComplete(todo.id)}>Complete</button>
-                        <button className={'myBtn'}>Delete</button>
+                        <button className={'myBtn'} onClick={() => deleteTodo(todo.id)}>Delete</button>
                     </div>
                     <hr/>
                 </React.Fragment>
