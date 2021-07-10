@@ -52,7 +52,7 @@ export default function TodosSelector (){
 
         const resp = await fetch('http://localhost:8888/update-todo/' + id, {
             method: 'PATCH',
-            body: JSON.stringify( {completed:  true}),
+            body: JSON.stringify( {completed: true}),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -65,7 +65,6 @@ export default function TodosSelector (){
 
         const resp = await fetch('http://localhost:8888/delete-todo/' + id, {
             method: 'DELETE',
-
         })
         await resp.json();
         dispatch(setDeleteTodo(id))
