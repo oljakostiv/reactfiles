@@ -1,6 +1,6 @@
 import './App.css';
 import React from "react";
-import TodosSelector from "./redux/todos/TodosSelector";
+import TodosSelector from "./todos/TodosSelector";
 
 function App() {
     return (
