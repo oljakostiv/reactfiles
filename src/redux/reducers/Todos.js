@@ -37,4 +37,3 @@ export const todosReducer = (state = initialState, action) => {
     }
 }
 
-//6.1

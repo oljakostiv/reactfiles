@@ -30,4 +30,4 @@ export default function Todos({todosValue, isLoading, btnComplete, deleteTodo}) 
 
 }
 
-//6.1
+

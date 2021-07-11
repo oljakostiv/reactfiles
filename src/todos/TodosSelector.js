@@ -78,4 +78,3 @@ export default function TodosSelector (){
     )
 }
 
-//6.1
