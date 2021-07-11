@@ -9,7 +9,7 @@ export default function Todos({todosValue, isLoading, btnComplete, deleteTodo}) 
 
             {todosValue.map(todo =>
                 <React.Fragment key={todo.id}>
-                    <div style={{textDecoration: todo.completed ? 'line-through' : 'none',}}>{todo.title} - {todo.description}
+                    <div style={{textDecoration: !todo.completed ? 'line-through' : 'none',}}>{todo.title} - {todo.description}
                         <br/>
                         <i>Created Ad: {new Date(todo.createdAt).toDateString()}</i>
                         <br/>
