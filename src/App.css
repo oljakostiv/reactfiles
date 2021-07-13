@@ -59,4 +59,24 @@
 
 .inputMovies {
   margin-right: 15px;
+  margin-left: 200px;
+}
+
+.inputMovies input {
+  width: 150px;
+  height: 20px;
+  background-color: #FBFBFB;
+  border: #14B7DC 1px solid;
+
+}
+
+.inputMovies button {
+  height: 25px;
+  background-color: #F9FAFB;
+  border: #14B7DC 1px solid;
+  color: #A3D8BB;
+  border-radius: 5%;
+  font-style: italic;
+
+  margin-left: 5px;
 }

@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
-import {addMovies, getMovies} from "../redux/actionCreators/ActionCreatorsMovies";
+import {getMovies} from "../redux/actionCreators/ActionCreators";
 import React, {useEffect} from "react";
 import Movies from "./MoviesValue";
 import './MoviesValue.css'

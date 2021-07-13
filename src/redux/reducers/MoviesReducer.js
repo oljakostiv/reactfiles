@@ -1,6 +1,6 @@
 import {
     GET_MOVIES,
-} from "../actionTypes/ActionTypesMovies";
+} from '../actionTypes/ActionTypes';
 
 const initialState = {
     moviesValue: [],

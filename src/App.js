@@ -6,6 +6,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import GenresSelector from "./genres/GenresSelector";
 
 function App() {
     return (
@@ -17,19 +18,18 @@ function App() {
                 <Router>
                         <Link to={'/'}>Home</Link>
                         <Link to={'/genres/'}>Genres</Link>
-                        <Link to={'/movies/'}>Movies</Link>
                     <Switch>
                         <Route exact path={'/'}></Route>
-                        <Route path={'/genres/'} render={(props) => <MoviesSelector {...props}/>}/>
-                        <Route path={'/movies/'} render={(props) => <MoviesSelector {...props}/>}/>
+                        <Route path={'/genres/'} render={(props) => <GenresSelector {...props}/>}/>
                     </Switch>
                 </Router>
                 <p className={'inputMovies'}>
                     <input type="text"/>
-                    <button>search</button>
+                    <button>search..</button>
                 </p>
             </div>
             <div className={'App-header'}>
+                <GenresSelector/>
                 <MoviesSelector/>
             </div>
         </div>

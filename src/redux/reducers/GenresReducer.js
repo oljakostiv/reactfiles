@@ -1,11 +1,15 @@
+import {
+    GET_GENRES,
+} from '../actionTypes/ActionTypes'
+
 const initialState = {
     genresValue: [],
 }
 
 export const genresReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'ADD_GENRES': {
-            return {...state, genresValue: action.payload}
+        case GET_GENRES: {
+            return {...state, genresValue: action.list}
         }
         default:
             return state
