@@ -4,36 +4,33 @@ import {useEffect} from "react";
 import Movies from "./MoviesValue";
 
 export default function MoviesSelector() {
-    const {moviesValue} = useSelector(store => store.moviesReducer);
+    const {moviesValue, page} = useSelector(store => store.moviesReducer);
     const dispatch = useDispatch();
 
-    // const fetchMovies = async () => {
-    //     const resp = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=41abab4f1d686bf9dc348a85920abfdf&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate', {
-    //         method: 'GET',
-    //         redirect: 'follow'
-    //     })
-    //     const data = await resp.text();
-    //     console.log(data)
-    //     // dispatch(addMovies(data));
-    //
+    const fetchMovies = async () => {
+        const resp = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=41abab4f1d686bf9dc348a85920abfdf&page=${page}`, {
+            method: 'GET',
+            redirect: 'follow'
+        })
+        const data = await resp.json();
+        console.log(data)
+        dispatch(addMovies(data.results));
+    };
+
+    useEffect(() => {
+        fetchMovies();
+    }, [])
+
+    // const fetchMovies = {
+    //     method: 'GET',
+    //     redirect: 'follow'
     // };
     //
     // useEffect(() => {
-    //     fetchMovies();
-    // }, [])
-
-    const fetchMovies = {
-        method: 'GET',
-        redirect: 'follow'
-    };
-
-    fetch("https://api.themoviedb.org/3/discover/movie?api_key=41abab4f1d686bf9dc348a85920abfdf&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate", fetchMovies)
-        .then(response => response.json())
-        .then(result => console.log(result))
-    dispatch(addMovies())
-    //
-    // useEffect(() => {
-    //     fetchMovies();
+    //      fetch(`https://api.themoviedb.org/3/discover/movie?api_key=41abab4f1d686bf9dc348a85920abfdf&page=${page}`, fetchMovies)
+    //         .then(response => response.json())
+    //         .then(result => console.log(result))
+    //         .then(results => dispatch(addMovies(results)))
     // }, [])
 
     return (
