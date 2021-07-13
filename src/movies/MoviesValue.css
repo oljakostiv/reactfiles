@@ -1,0 +1,15 @@
+.moviesPage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.moviePage {
+    width: 200px;
+    height: 450px;
+    background-color: #101215;
+
+    margin: 20px;
+}

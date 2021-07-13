@@ -1,15 +1,21 @@
 import React from "react";
+import './MoviesValue.css'
 
 export default function Movies({moviesValue}) {
+
     return (
-        <div>
+        <div className={'moviesPage'}>
             {
                 moviesValue.map(movie => (
-                <React.Fragment key={movie.id}>
+                <div className={'moviePage'} key={movie.id}>
+                    <img style={{width: '200px'}} src={'https://image.tmdb.org/t/p/w500/' + movie.poster_path} alt="poster"/>
+                    <div>{movie.vote_average}</div>
                     <div>
-                        {movie.id} - {movie.title}
+                        <b>{movie.title}</b>
+                        <br/>
+                        <i>{movie.release_date}</i>
                     </div>
-                </React.Fragment>
+                </div>
                 ))
             }
         </div>

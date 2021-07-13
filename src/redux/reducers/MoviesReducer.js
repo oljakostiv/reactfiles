@@ -1,5 +1,5 @@
 import {
-    ADD_MOVIES,
+    GET_MOVIES,
 } from "../actionTypes/ActionTypesMovies";
 
 const initialState = {
@@ -8,7 +8,7 @@ const initialState = {
 
 export const moviesReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_MOVIES: {
+        case GET_MOVIES: {
             return {...state, moviesValue: action.payload}
         }
         default:

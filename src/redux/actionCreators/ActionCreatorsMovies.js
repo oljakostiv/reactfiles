@@ -1,5 +1,5 @@
 import {
-    ADD_MOVIES,
+    GET_MOVIES,
 } from "../actionTypes/ActionTypesMovies";
 
-export const addMovies = (payload) => ({type: ADD_MOVIES, payload});
+export const getMovies = (payload) => ({type: GET_MOVIES, payload});

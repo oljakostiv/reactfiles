@@ -1,1 +1,1 @@
-export const ADD_MOVIES = 'ADD_MOVIES';
+export const GET_MOVIES = 'GET_MOVIES';
