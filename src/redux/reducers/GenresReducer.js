@@ -9,7 +9,7 @@ const initialState = {
 export const genresReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_GENRES: {
-            return {...state, genresValue: action.list}
+            return {...state, genresValue: action.payload}
         }
         default:
             return state

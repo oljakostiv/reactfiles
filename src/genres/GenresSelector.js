@@ -3,8 +3,9 @@ import {getGenres} from "../redux/actionCreators/ActionCreators";
 import React, {useEffect} from "react";
 import Genres from "./GenresValue";
 
+
 export default function GenresSelector() {
-    const {genresValue} = useSelector(store => store.moviesReducer);
+    const {genresValue} = useSelector(store => store.genresReducer);
     const dispatch1 = useDispatch();
 
     const fetchGenres = async () => {
@@ -23,7 +24,6 @@ export default function GenresSelector() {
 
     return (
         <div>
-            <div><h3>Genres:</h3></div>
             <Genres genresValue={genresValue}/>
         </div>
     )

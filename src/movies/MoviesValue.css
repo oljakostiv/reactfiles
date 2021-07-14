@@ -18,3 +18,21 @@
     text-decoration: none;
     color: #1EB9D7;
 }
+
+.pages {
+    margin: 20px 0;
+}
+.page, .current-page {
+    border: 1px solid #14B7DC;
+    border-radius: 100%;
+    font-size: 12px;
+    cursor: pointer;
+
+    padding: 5px 10px;
+    margin: 0 10px;
+}
+
+.current-page {
+    border: 2px solid #F9FAFB;
+    font-weight: 700;
+}

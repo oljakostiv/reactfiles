@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import GenresSelector from "./genres/GenresSelector";
 
+
 function App() {
     return (
         <div className={'App'}>
@@ -29,7 +30,6 @@ function App() {
                 </p>
             </div>
             <div className={'App-header'}>
-                <GenresSelector/>
                 <MoviesSelector/>
             </div>
         </div>
