@@ -3,7 +3,6 @@ import {getGenres} from "../redux/actionCreators/ActionCreators";
 import React, {useEffect} from "react";
 import Genres from "./GenresValue";
 
-
 export default function GenresSelector() {
     const {genresValue} = useSelector(store => store.genresReducer);
     const dispatch1 = useDispatch();
